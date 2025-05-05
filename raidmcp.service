@@ -1,0 +1,17 @@
+[Unit]
+Description=Raid Shadow Legends MCP Server
+After=network.target
+
+[Service]
+Type=simple
+User=<USER>
+WorkingDirectory=/home/<USER>/RaidShadowLegendsButItsMCP
+ExecStart=/usr/bin/npm start
+Restart=on-failure
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=raidmcp
+
+[Install]
+WantedBy=multi-user.target 
